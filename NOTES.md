@@ -12,5 +12,6 @@
 - Add secrets
 - Add achievements
 - Add stats
+- Add saving
 - Add settings
 - Cleanup the project and make it look better
