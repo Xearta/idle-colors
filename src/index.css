@@ -1,21 +1,75 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;600;700&display=swap');
+
+html {
+  font-size: 62.5%; /* Sets default font size to 10px (1rem) */
+  box-sizing: border-box;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body,
+input,
+button,
+select,
+textarea {
+  font: 1.6rem 'Inter', sans-serif;
+  margin: 0;
+  background-color: #bebebe;
 }
 
-.container {
-  margin: 100px;
+.gameContainer h2 {
+  text-align: center;
 }
 
-.container > div {
-  margin: 10px 0;
+.gameContainer .infoBar {
+  display: flex;
+  margin: 0 20rem;
+  font-size: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.gameContainer .infoBar div {
+  flex: 1 100%;
+  width: 100%;
+  padding: 0.2rem;
+  text-align: center;
+}
+
+.gameContainer .infoBar div:nth-child(1) {
+  font-weight: 600;
+}
+
+.colorsContainer {
+  background-color: #232323;
+  border-top: 0.3rem solid #f2ae3a;
+  margin-top: 10rem;
+  height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.colorsContainer .color {
+  flex: 0 30%;
+  height: 15rem;
+  width: 30%;
+  max-width: 30%;
+  padding: 1rem;
+  color: white;
+}
+
+.colorsContainer .color button {
+  background-color: transparent;
+  border: 1px solid #f2ae3a;
+  color: white;
+  height: 5rem;
+  width: 100%;
+  cursor: pointer;
+  margin-top: 0.5rem;
+}
+
+.colorsContainer .color button:disabled {
+  filter: brightness(0.5);
+  cursor: auto;
 }

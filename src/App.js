@@ -58,31 +58,39 @@ function App() {
   };
 
   return (
-    <div className='container'>
-      <div>Welcome to Idle Colors</div>
-      <div>$ {numFormatter(money)}</div>
-      <div>$ {numFormatter(mps)}/s</div>
-      <hr />
+    <div className='gameContainer'>
+      <h2>Welcome to Idle Colors</h2>
+      <div className='infoBar'>
+        <div>$ {numFormatter(money)}</div>
+        <div>$ {numFormatter(mps)}/s</div>
+      </div>
 
-      {colors.map(
-        color =>
-          checkUnlocks(color) && (
-            <div key={color.id}>
-              <div style={{ backgroundColor: `${color.name}` }}>
-                {color.name} - Increment by {color.mps * color.multiplier}/s |
-                Total: {color.totalMps}/s
+      <div className='colorsContainer'>
+        {colors.map(
+          color =>
+            checkUnlocks(color) && (
+              <div key={color.id} className='color'>
+                <div>
+                  <span
+                    style={{
+                      backgroundColor: `${color.name}`,
+                      color: 'black',
+                    }}>
+                    {color.name}
+                  </span>{' '}
+                  ({color.amount}) - Increment by {color.mps * color.multiplier}
+                  /s | Total: {color.totalMps}/s
+                </div>
+                <button
+                  disabled={money < color.cost}
+                  name={color.name}
+                  onClick={() => handleClick(color)}>
+                  ${numFormatter(color.cost)}
+                </button>
               </div>
-              <div>Amount: {color.amount}</div>
-              <div>$ {numFormatter(color.cost)}</div>
-              <button
-                disabled={money < color.cost}
-                name={color.name}
-                onClick={() => handleClick(color)}>
-                Buy 1 {color.name}
-              </button>
-            </div>
-          )
-      )}
+            )
+        )}
+      </div>
     </div>
   );
 }
