@@ -63,6 +63,13 @@ function App() {
       <div className='infoBar'>
         <div>$ {numFormatter(money)}</div>
         <div>$ {numFormatter(mps)}/s</div>
+        <div>
+          <button>Colors</button>
+          <button>Upgrades</button>
+          <button>Statistics</button>
+          <button>Settings</button>
+          <button>Max All (M)</button>
+        </div>
       </div>
 
       <div className='colorsContainer'>
